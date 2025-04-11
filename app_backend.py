@@ -38,7 +38,6 @@ cache = {}
 
 # --- Function to establish database connection ---
 import psycopg2
-cursor = conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
 
 
 def connect_db():
