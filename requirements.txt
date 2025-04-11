@@ -1,0 +1,12 @@
+flask
+flask_cors
+fpdf
+pillow
+pytesseract
+python-dotenv
+mysql-connector-python
+pdf2image
+PyMuPDF
+google-generativeai
+langdetect
+googletrans==4.0.0-rc1
