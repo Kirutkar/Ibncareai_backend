@@ -172,6 +172,8 @@ def chat():
         return jsonify({"response": new_user_disclaimer + final_response})
 
     except Exception as e:
+        import traceback
+        traceback.print_exc()
         return jsonify({"response": f"❌ AI Error: {str(e)}"})
 
 
