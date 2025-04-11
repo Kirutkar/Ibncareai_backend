@@ -583,4 +583,6 @@ def upload_scan():
 
 # --- Run Flask App ---
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 10000))  # fallback to 10000 just in case
+    app.run(host="0.0.0.0", port=port)
+
