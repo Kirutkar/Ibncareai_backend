@@ -70,7 +70,7 @@ def chat():
     user_message = data["message"]
     user_name = data["user_name"].strip().lower()
     gender = data["gender"].strip().lower()
-    age = int(data["age"])
+    age = str(data["age"])
 
     # --- Language Detection ---
     translator = Translator()
@@ -191,7 +191,7 @@ def log_symptom():
     user_name = data["user_name"]
     symptom = data["symptom"]
     gender = data["gender"]
-    age = data["age"]
+    age = str(data["age"])
 
     conn = connect_db()
     if conn is None:
@@ -263,7 +263,7 @@ def get_symptoms():
 
     user_name = data["user_name"].strip().lower()
     gender = data["gender"].strip().lower()
-    age = int(data["age"])
+    age = str(data["age"])
 
     conn = connect_db()
     if conn is None:
@@ -298,9 +298,6 @@ def get_symptoms():
         if conn: conn.close()
 
 
-import psycopg2  # ensure this is imported
-# (already used in your `connect_db()` function)
-
 @app.route("/log_medical_history", methods=["POST"])
 def log_medical_history():
     data = request.get_json()
@@ -312,7 +309,7 @@ def log_medical_history():
     condition_type = data["condition_type"]
     description = data.get("condition_description", "")
     gender = data["gender"]
-    age = data["age"]
+    age =str(data["age"])
 
     conn = connect_db()
     if conn is None:
@@ -350,7 +347,7 @@ def get_medical_history():
 
     medical_user_name = data["medical_user_name"].strip().lower()
     gender = data["gender"].strip().lower()
-    age = data["age"]
+    age = str(data["age"])
 
     conn = connect_db()
     if conn is None:
@@ -389,7 +386,7 @@ def analyze_symptoms():
 
     user_name = data["user_name"].strip().lower()
     gender = data["gender"].strip().lower()
-    age = data["age"]
+    age =str(data["age"])
 
     conn = connect_db()
     if conn is None:
@@ -456,7 +453,7 @@ def export_pdf():
 
     user_name = data["user_name"]
     gender = data["gender"]
-    age = data["age"]
+    age = str(data["age"])
     chat_history = data["chat_history"]
     symptoms = data["symptoms"]
     medical_history = data["medical_history"]
