@@ -206,7 +206,7 @@ def log_symptom():
         cursor = conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
 
         # --- Analyze symptoms if we have 7 days of logs ---
-        cursor = conn.cursor(dictionary=True)
+        
         cursor.execute("""
             SELECT symptom, gender, age 
             FROM symptoms 
