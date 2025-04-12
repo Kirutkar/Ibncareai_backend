@@ -37,7 +37,7 @@ CORS(app)  # Enable CORS
 cache = {}
 
 # --- Function to establish database connection ---
-import psycopg2
+import psycopg2.extras
 
 
 def connect_db():
