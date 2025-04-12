@@ -38,6 +38,7 @@ cache = {}
 
 import psycopg2
 import psycopg2.extras  # ✅ ADD THIS LINE
+cursor = conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
 
 
 
